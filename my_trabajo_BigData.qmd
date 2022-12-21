@@ -2,20 +2,25 @@
 title: "Los pingüinos molan"
 description: |
   Viendo si con los datos de pingüinos se aprecia la paradoja de Simpson
-author:
-  - name: Pedro Navaja
-    affiliation: Universitat de València
-    affiliation-url: https://www.uv.es
-date: 2022-11-01
-categories: [trabajo BigData, pinguinos]
-image: "./posts/imagenes/imagen_01.png"
-title-block-banner: true #- {true, false }
+author: Norah Jones (pepe@uv.es)  #--
+date: 2022-11-01                  #--
+categories: [trabajo BigData, pinguinos]   #--
+image: "./imagenes/imagen_01.png"
+title-block-banner: true #- {true, false, "green","#AA0000"}
+title-block-banner-color: "red"    #-"#FFFFFF" 
 toc: true
 toc-location: left
 toc-depth: 3
-#css: ./assets/my_css_file.css
+smooth-scroll: true
+format: 
+  html:
+    #backgroundcolor: "#F1F3F4"
+    #standalone: true  
+    link-external-newwindow: true
+    #css: ./assets/my_css_file.css   #- CUIDADO!!!!
+code-tools: true
+code-link: true
 ---
-
 
 
 ## Intro 
@@ -33,7 +38,7 @@ df <- palmerpenguins::penguins
 
 El dataset contiene observaciones sobre un conjunto de `r nrow(df)` pingüinos de 3 especies. Hay  `r ncol(df)` variables.
 
-
+---
 
 ## Los pingüinos molan
 
@@ -47,6 +52,7 @@ my_url <- "https://upload.wikimedia.org/wikipedia/commons/a/a9/Ping%C3%BCinos.JP
 
 ![Un pingüino chulo](https://upload.wikimedia.org/wikipedia/commons/a/a9/Ping%C3%BCinos.JPG?20090406212143)
 
+---
 
 Sí, lo pingüinos molan, así que vamos a poner otra foto de pingüinos que tenemos en nuestro PC pero la vamos a poner en el margen:
 
@@ -56,6 +62,7 @@ Sí, lo pingüinos molan, así que vamos a poner otra foto de pingüinos que ten
 
 :::
 
+---
 
 ## Algunos gráficos
 
@@ -77,6 +84,7 @@ df <- palmerpenguins::penguins %>%
   tidyr::drop_na()
 ```
 
+---
 
 ### Primer gráfico
 
@@ -89,6 +97,7 @@ p <- ggplot(data = df,
 p
 ```
 
+---
 
 ### Segundo
 
@@ -99,6 +108,7 @@ p <- p + geom_smooth(method = "lm", se = FALSE)
 p
 ```
 
+---
 
 ### El último
 
@@ -113,6 +123,12 @@ Con esto acabo mi trabajo para BigData!!
 
 <br>
 
+----------------------
+
+<br>
+
+### Información sobre la sesión
+
 Abajo muestro mi entorno de trabajo y paquetes utilizados
 
 ```{r}
@@ -120,4 +136,6 @@ Abajo muestro mi entorno de trabajo y paquetes utilizados
 sessioninfo::session_info() %>% 
   details::details(summary = 'current session info') 
 ```
+
+
 
